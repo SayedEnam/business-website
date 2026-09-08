@@ -1,4 +1,4 @@
-@php
+<?php
     $seoPages = [
         '/' => ['WADIALABABIL INFOTECH | IT & Digital Marketing Solutions', 'WADIALABABIL INFOTECH delivers practical IT consulting, website development, SEO, digital marketing, automation and e-commerce solutions for growing businesses.'],
         'contact' => ['Contact WADIALABABIL INFOTECH | Start a Digital Project', 'Contact WADIALABABIL INFOTECH for website development, IT consulting, SEO, digital marketing, automation and e-commerce project support.'],
@@ -14,29 +14,29 @@
     if ($currentPath === '') {
         $canonicalUrl = rtrim($siteUrl, '/') . '/';
     }
-@endphp
+?>
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $seoTitle }}</title>
-    <meta name="description" content="{{ $seoDescription }}">
+    <title><?php echo e($seoTitle); ?></title>
+    <meta name="description" content="<?php echo e($seoDescription); ?>">
     <meta name="keywords" content="IT consulting, website development, digital marketing, SEO services, social media management, paid advertising, e-commerce solutions, business automation, New York">
     <meta name="author" content="WADIALABABIL INFOTECH">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#080908">
-    <link rel="canonical" href="{{ $canonicalUrl }}">
+    <link rel="canonical" href="<?php echo e($canonicalUrl); ?>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="WADIALABABIL INFOTECH">
-    <meta property="og:title" content="{{ $seoTitle }}">
-    <meta property="og:description" content="{{ $seoDescription }}">
-    <meta property="og:url" content="{{ $canonicalUrl }}">
+    <meta property="og:title" content="<?php echo e($seoTitle); ?>">
+    <meta property="og:description" content="<?php echo e($seoDescription); ?>">
+    <meta property="og:url" content="<?php echo e($canonicalUrl); ?>">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ $seoTitle }}">
-    <meta name="twitter:description" content="{{ $seoDescription }}">
+    <meta name="twitter:title" content="<?php echo e($seoTitle); ?>">
+    <meta name="twitter:description" content="<?php echo e($seoDescription); ?>">
     <script type="application/ld+json">
-        {!! json_encode([
+        <?php echo json_encode([
             chr(64) . 'context' => 'https://schema.org',
             chr(64) . 'type' => 'ProfessionalService',
             'name' => 'WADIALABABIL INFOTECH',
@@ -51,12 +51,14 @@
                 'postalCode' => '10473',
                 'addressCountry' => 'US',
             ],
-        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>
+
     </script>
-    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.jsx']); ?>
 </head>
 <body>
     <div id="app"></div>
 </body>
 </html>
 
+<?php /**PATH C:\Users\syede\OneDrive\Documentos\ChatGPT\sayed-bhai\resources\views\app.blade.php ENDPATH**/ ?>
